@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=d6761d89-45d9-4e9a-bd63-b93e1a12eafc
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=d6761d89-45d9-4e9a-bd63-b93e1a12eafc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Nalapad Academy | Premier Cambridge International School in Indiranagar, Bengaluru</title>
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <meta name="description" content="Enroll at Nalapad Academy, top Cambridge International School in Indiranagar, Bangalore. Offering EYFS, Cambridge Primary, Lower Secondary, IGCSE & A-Levels with Apple Smart Classrooms, Rooftop Turf & 6:1 Student-Teacher Ratio. Admissions Open 2026-27.">
+  <meta name="keywords" content="Nalapad Academy, Cambridge School Indiranagar, Best IGCSE school Domlur, Top International School Bangalore, Early Years Foundation Stage, Cambridge A Levels Bangalore">
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Bootstrap (grid system & responsive utilities) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Tag Manager / Ads Simulation Script -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-714843451');
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+     1. TOP CONTACT & ANNOUNCEMENT BAR (Click-to-Dial Phone & Email)
+     ========================================================================== -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-contact-info">
+        <div class="top-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>Call Admissions: </span>
+          <a href="tel:+919120888888" id="topPhoneLink">+91 91208 88888</a>
+        </div>
+        <div class="top-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>Email: </span>
+          <a href="mailto:admissions@nalapadacademy.in" id="topEmailLink">admissions@nalapadacademy.in</a>
+        </div>
+      </div>
+      <div class="top-announcement">
+        <span class="badge-pulse">Admissions Open 2026-27</span>
+        <span>Limited Seats Available for EYFS, IGCSE &amp; A Levels!</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     3. HERO SECTION WITH ABOVE-THE-FOLD ADMISSION LEAD FORM
+     ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-grid row g-4 align-items-center">
+      <div class="hero-content reveal-left col-12 col-lg-7">
+        <div class="hero-badge-pill">
+          <i class="fas fa-award"></i> Premier IGCSE &amp; A-Level School in Domlur / Indiranagar
+        </div>
+        <h1 class="hero-title">
+          Empowering Young Minds with <span>World-Class Cambridge Education</span>
+        </h1>
+        <p class="hero-description">
+          Nalapad Academy offers a progressive, student-centric learning environment blending global academic rigor, Apple Smart Classrooms, and holistic child development in the heart of Bengaluru.
+        </p>
+
+        <ul class="hero-highlights-list row g-3 list-unstyled">
+          <li class="hero-highlight-item col-12 col-md-6"><i class="fas fa-check-circle"></i> <span>Cambridge Pathway (EYFS to A Level)</span></li>
+          <li class="hero-highlight-item col-12 col-md-6"><i class="fas fa-check-circle"></i> <span>Apple Smart Interactive Classrooms</span></li>
+          <li class="hero-highlight-item col-12 col-md-6"><i class="fas fa-check-circle"></i> <span>6:1 Personalized Student-Teacher Ratio</span></li>
+          <li class="hero-highlight-item col-12 col-md-6"><i class="fas fa-check-circle"></i> <span>World-Class Rooftop Sports Turf &amp; Pool</span></li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="tel:+919120888888" class="btn btn-primary" id="heroCallBtn">
+            <i class="fas fa-phone-alt"></i> Call Admissions: +91 91208 88888
+          </a>
+          <button class="btn btn-outline trigger-visit-modal" style="color:#FFF!important; border-color:#FFF;">
+            <i class="fas fa-calendar-check"></i> Book Campus Visit
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Admission Form (High Conversion above the fold) -->
+      <div class="hero-form-card reveal-right col-12 col-lg-5" id="heroEnquiryForm">
+        <div class="form-header">
+          <h3>Admission Enquiry 2026-27</h3>
+          <p>Get prospectus, fee structure &amp; counselor callback</p>
+        </div>
+        <form class="admission-lead-form" id="heroFormElement">
+          <div class="form-group">
+            <label class="form-label">Parent's Full Name *</label>
+            <input type="text" class="form-control" placeholder="Enter parent name" required id="heroParentName">
+          </div>
+          <div class="form-row row g-3">
+            <div class="form-group col-12 col-sm-6">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" class="form-control" placeholder="10-digit mobile" required id="heroPhone">
+            </div>
+            <div class="form-group col-12 col-sm-6">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-control" placeholder="parent@example.com" required id="heroEmail">
+            </div>
+          </div>
+          <div class="form-row row g-3">
+            <div class="form-group col-12 col-sm-6">
+              <label class="form-label">Grade / Program Seeking *</label>
+              <select class="form-control" required id="heroGrade">
+                <option value="">Select Grade</option>
+                <option value="Early Years (EYFS 2 to FS2)">Early Years (Nursery / Kindergarten)</option>
+                <option value="Cambridge Primary (Grade 1-5)">Cambridge Primary (Grades 1-5)</option>
+                <option value="Cambridge Lower Secondary (Grade 6-8)">Cambridge Lower Secondary (Grades 6-8)</option>
+                <option value="Cambridge Upper Secondary (IGCSE Grade 9-10)">Cambridge IGCSE (Grades 9-10)</option>
+                <option value="Cambridge Advanced (AS & A Levels)">AS &amp; A Levels (Grades 11-12)</option>
+              </select>
+            </div>
+            <div class="form-group col-12 col-sm-6">
+              <label class="form-label">Residential Area</label>
+              <input type="text" class="form-control" placeholder="e.g. Indiranagar, Domlur" id="heroLocation">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit-btn" id="heroSubmitBtn">
+            <i class="fas fa-paper-plane"></i> Submit Enquiry &amp; Download Brochure
+          </button>
+          <div class="form-privacy-note">
+            <i class="fas fa-lock"></i> 100% Confidential. Instant Callback from Admissions Team.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     4. KEY STATISTICS & SCHOOL HIGHLIGHTS STRIP
+     ========================================================================== -->
+  <div class="container">
+    <div class="stats-strip reveal-scale">
+      <div class="stats-grid row g-3">
+        <div class="stat-item col-6 col-md-4 col-lg">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">Years of Innovation</div>
+        </div>
+        <div class="stat-item col-6 col-md-4 col-lg">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Happy Students</div>
+        </div>
+        <div class="stat-item col-6 col-md-4 col-lg">
+          <div class="stat-number">6:1</div>
+          <div class="stat-label">Student-Teacher Ratio</div>
+        </div>
+        <div class="stat-item col-6 col-md-4 col-lg">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Cambridge Pass Rate</div>
+        </div>
+        <div class="stat-item col-12 col-md-4 col-lg">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Sports &amp; Clubs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     5. FLOATING QUICK-CONTACT BUTTONS (DESKTOP & MOBILE)
+     ========================================================================== -->
+  <div class="floating-actions-container">
+    <a href="https://wa.me/91912088888?text=Hello%20Nalapad%20Academy,%20I%20am%20interested%20in%20admission%20details." target="_blank" class="float-btn float-btn-whatsapp" id="floatWhatsapp" aria-label="WhatsApp Us">
+      <i class="fab fa-whatsapp"></i>
+      <span class="float-btn-tooltip">Chat on WhatsApp</span>
+    </a>
+    <a href="tel:+919120888888" class="float-btn float-btn-call" id="floatCall" aria-label="Call Admissions">
+      <i class="fas fa-phone-alt"></i>
+      <span class="float-btn-tooltip">Call Admissions Now</span>
+    </a>
+    <button class="float-btn float-btn-enquire trigger-enquire-modal" id="floatEnquire" aria-label="Enquire Now">
+      <i class="fas fa-edit"></i>
+      <span class="float-btn-tooltip">Enquire Now</span>
+    </button>
+  </div>
+
+  <!-- Mobile Bottom Sticky CTA Bar -->
+  <div class="mobile-bottom-bar gap-2">
+    <a href="tel:+919120888888" class="btn btn-secondary flex-fill">
+      <i class="fas fa-phone-alt"></i> Call
+    </a>
+    <a href="https://wa.me/91912088888" target="_blank" class="btn btn-whatsapp flex-fill">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <button class="btn btn-primary trigger-enquire-modal flex-fill">
+      <i class="fas fa-paper-plane"></i> Enquire Now
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+     6. ABOUT NALAPAD ACADEMY SECTION
+     ========================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid row g-4 align-items-center">
+        <div class="about-image-stack reveal-left col-12 col-lg-6">
+          <img src="./assets/apple.jpg" alt="Nalapad Academy Campus" class="about-main-img">
+          <div class="about-badge-card">
+            <i class="fas fa-graduation-cap"></i>
+            <div class="about-badge-text">
+              <h4>Cambridge Center IA031</h4>
+              <p>Recognized for International Excellence</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text-content reveal-right col-12 col-lg-6">
+          <span class="section-tag">About Nalapad Academy</span>
+          <h2 class="section-title">Where Global Standards Meet Nurturing Excellence</h2>
+          <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+            At Nalapad Academy, we take immense pride in being recognized as one of the top Cambridge International Schools in Bangalore. Situated in the accessible corridor of Domlur/Indiranagar, our campus is designed to unlock every child's full potential in a safe, inspiring environment.
+          </p>
+
+          <div class="feature-cards-grid row g-3">
+            <div class="feature-card reveal col-12 col-md-6">
+              <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+              <h4>Apple Smart Classes</h4>
+              <p>Interactive digital classrooms equipped with state-of-the-art tech tools for immersive learning.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-1 col-12 col-md-6">
+              <div class="feature-icon"><i class="fas fa-brain"></i></div>
+              <h4>Individual Mentoring</h4>
+              <p>Tailored academic guidance with our 6:1 student-teacher ratio ensuring no child is left behind.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-2 col-12 col-md-6">
+              <div class="feature-icon"><i class="fas fa-futbol"></i></div>
+              <h4>Rooftop Football Turf</h4>
+              <p>World-class outdoor sports infrastructure supporting physical health &amp; teamwork skills.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-3 col-12 col-md-6">
+              <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+              <h4>CCTV &amp; Safe Campus</h4>
+              <p>Comprehensive 24/7 security monitoring, infirmary, and balanced nutritious meals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     7. DEDICATED EARLY YEARS PROGRAM SECTION (EYFS 2, EYFS 3, FS1, FS2)
+     ========================================================================== -->
+  <section class="early-years-section" id="early-years">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Early Years Foundation Stage</span>
+        <h2 class="section-title">Nurturing Wonder &amp; Curiosity in Early Learners</h2>
+        <p class="section-subtitle">
+          Our Early Years program combines the renowned UK EYFS framework with play-based, experiential learning to foster confidence, creativity, and foundational literacy &amp; numeracy.
+        </p>
+      </div>
+
+      <div class="ey-stage-grid row g-3">
+        <!-- EYFS 2 -->
+        <div class="ey-card reveal col-12 col-md-6 col-lg-3">
+          <span class="ey-stage-tag">Stage 1</span>
+          <h3>EYFS 2</h3>
+          <div class="ey-age-group"><i class="far fa-clock"></i> Age: 2 to 3 Years</div>
+          <p>Sensory exploration, motor skill development, and social emotional bonding in a warm, protective environment.</p>
+          <ul class="ey-list">
+            <li><i class="fas fa-check"></i> Play-based sensory learning</li>
+            <li><i class="fas fa-check"></i> Language &amp; speech building</li>
+            <li><i class="fas fa-check"></i> Gross &amp; fine motor skills</li>
+          </ul>
+          <button class="btn btn-outline trigger-enquire-modal" style="width: 100%; margin-top: auto;">Enquire for EYFS 2</button>
+        </div>
+
+        <!-- EYFS 3 -->
+        <div class="ey-card reveal reveal-delay-1 col-12 col-md-6 col-lg-3">
+          <span class="ey-stage-tag">Stage 2</span>
+          <h3>EYFS 3</h3>
+          <div class="ey-age-group"><i class="far fa-clock"></i> Age: 3 to 4 Years</div>
+          <p>Building curiosity, story-telling, phonics readiness, and independent creative expression.</p>
+          <ul class="ey-list">
+            <li><i class="fas fa-check"></i> Early phonics &amp; vocabulary</li>
+            <li><i class="fas fa-check"></i> Hands-on counting &amp; shapes</li>
+            <li><i class="fas fa-check"></i> Guided art &amp; music activities</li>
+          </ul>
+          <button class="btn btn-outline trigger-enquire-modal" style="width: 100%; margin-top: auto;">Enquire for EYFS 3</button>
+        </div>
+
+        <!-- FS1 -->
+        <div class="ey-card reveal reveal-delay-2 col-12 col-md-6 col-lg-3">
+          <span class="ey-stage-tag">Foundation 1</span>
+          <h3>FS1 (Pre-K)</h3>
+          <div class="ey-age-group"><i class="far fa-clock"></i> Age: 4 to 5 Years</div>
+          <p>Structured learning readiness, interactive reading, logic building, and collaborative teamwork.</p>
+          <ul class="ey-list">
+            <li><i class="fas fa-check"></i> Phonics &amp; sight words</li>
+            <li><i class="fas fa-check"></i> Basic mathematical concepts</li>
+            <li><i class="fas fa-check"></i> Environmental awareness</li>
+          </ul>
+          <button class="btn btn-outline trigger-enquire-modal" style="width: 100%; margin-top: auto;">Enquire for FS1</button>
+        </div>
+
+        <!-- FS2 -->
+        <div class="ey-card reveal reveal-delay-3 col-12 col-md-6 col-lg-3">
+          <span class="ey-stage-tag">Foundation 2</span>
+          <h3>FS2 (Kindergarten)</h3>
+          <div class="ey-age-group"><i class="far fa-clock"></i> Age: 5 to 6 Years</div>
+          <p>Seamless transition to Cambridge Primary with strong reading fluency, logical reasoning, and confidence.</p>
+          <ul class="ey-list">
+            <li><i class="fas fa-check"></i> Reading &amp; writing fluency</li>
+            <li><i class="fas fa-check"></i> Practical science experiments</li>
+            <li><i class="fas fa-check"></i> Smooth primary transition</li>
+          </ul>
+          <button class="btn btn-outline trigger-enquire-modal" style="width: 100%; margin-top: auto;">Enquire for FS2</button>
+        </div>
+      </div>
+
+      <div class="text-center reveal" style="margin-top: 2.5rem;">
+        <button class="btn btn-primary trigger-visit-modal">
+          <i class="fas fa-school"></i> Book an Early Years Campus Tour
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     8. DEDICATED CAMBRIDGE PATHWAY SECTION (TABBED SHOWCASE)
+     ========================================================================== -->
+  <section class="cambridge-section" id="cambridge">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Cambridge Pathway</span>
+        <h2 class="section-title">A Continuous Journey of Academic Rigor</h2>
+        <p class="section-subtitle">
+          From Primary grades to A Levels, our Cambridge curriculum empowers students with critical thinking, global perspectives, and university-ready credentials.
+        </p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="pathway-tabs reveal">
+        <button class="tab-btn active" data-tab="tab-primary">Cambridge Primary (Grades 1-5)</button>
+        <button class="tab-btn" data-tab="tab-lower-sec">Lower Secondary (Grades 6-8)</button>
+        <button class="tab-btn" data-tab="tab-igcse">IGCSE Upper Sec (Grades 9-10)</button>
+        <button class="tab-btn" data-tab="tab-a-level">AS &amp; A Levels (Grades 11-12)</button>
+      </div>
+
+      <!-- Tab Content 1: Primary -->
+      <div class="tab-content active" id="tab-primary">
+        <div class="program-detail-card reveal-scale row g-4 align-items-center">
+          <div class="program-detail-info col-12 col-lg-7">
+            <div class="program-meta-pills">
+              <span class="meta-pill">Ages 5 - 11</span>
+              <span class="meta-pill">Grades 1 - 5</span>
+              <span class="meta-pill">Cambridge Primary Checkpoint</span>
+            </div>
+            <h3>Cambridge Primary Stage</h3>
+            <p>
+              Develops core knowledge in English, Mathematics, Science, ICT, and Global Perspectives. Our inquiry-based approach encourages young learners to explore, ask questions, and build lasting problem-solving abilities.
+            </p>
+
+            <div class="curriculum-highlights-title">Key Subjects &amp; Focus Areas:</div>
+            <div class="curriculum-grid row g-2">
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> English (1st &amp; 2nd Language)</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Cambridge Mathematics</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> General &amp; Applied Science</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Cambridge Global Perspectives</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Digital Literacy &amp; Coding</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Physical Education &amp; Arts</div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-primary trigger-enquire-modal">Enquire for Primary Grades</button>
+            </div>
+          </div>
+
+          <div class="program-img-frame col-12 col-lg-5">
+            <img src="./assets/primary.png" alt="Cambridge Primary Learning">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 2: Lower Secondary -->
+      <div class="tab-content" id="tab-lower-sec">
+        <div class="program-detail-card row g-4 align-items-center">
+          <div class="program-detail-info col-12 col-lg-7">
+            <div class="program-meta-pills">
+              <span class="meta-pill">Ages 11 - 14</span>
+              <span class="meta-pill">Grades 6 - 8</span>
+              <span class="meta-pill">Cambridge Checkpoint Ready</span>
+            </div>
+            <h3>Cambridge Lower Secondary Stage</h3>
+            <p>
+              Prepares students for senior secondary academic challenges by deepening conceptual understanding in core sciences, humanities, and analytical mathematics. Encourages independent research and teamwork.
+            </p>
+
+            <div class="curriculum-highlights-title">Key Subjects &amp; Focus Areas:</div>
+            <div class="curriculum-grid row g-2">
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Advanced Mathematics</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Physics, Chemistry &amp; Biology</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> English Literature &amp; ESL</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Humanities &amp; Social Sciences</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> ICT &amp; Computer Science</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> French / Hindi Language Options</div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-primary trigger-enquire-modal">Enquire for Lower Secondary</button>
+            </div>
+          </div>
+
+          <div class="program-img-frame col-12 col-lg-5">
+            <img src="./assets/lower-secondary.png" alt="Cambridge Lower Secondary">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 3: IGCSE Upper Secondary -->
+      <div class="tab-content" id="tab-igcse">
+        <div class="program-detail-card row g-4 align-items-center">
+          <div class="program-detail-info col-12 col-lg-7">
+            <div class="program-meta-pills">
+              <span class="meta-pill">Ages 14 - 16</span>
+              <span class="meta-pill">Grades 9 - 10</span>
+              <span class="meta-pill">IGCSE Board Certification</span>
+            </div>
+            <h3>Cambridge IGCSE (Upper Secondary)</h3>
+            <p>
+              The world’s most popular international qualification for 14 to 16-year-olds. Offers flexible subject combinations across STEM, Commerce, and Arts, with a focus on practical applications and global recognition.
+            </p>
+
+            <div class="curriculum-highlights-title">IGCSE Electives &amp; Subject Choices:</div>
+            <div class="curriculum-grid row g-2">
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Extended Mathematics</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Physics, Chem, Bio (Pure/Combined)</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Business Studies &amp; Economics</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Computer Science &amp; AI Tech</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> First Language English</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Art &amp; Design / Music</div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-primary trigger-enquire-modal">Enquire for IGCSE Admissions</button>
+            </div>
+          </div>
+
+          <div class="program-img-frame col-12 col-lg-5">
+            <img src="./assets/upper-secondary.png" alt="Cambridge IGCSE Upper Secondary">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 4: AS & A Levels -->
+      <div class="tab-content" id="tab-a-level">
+        <div class="program-detail-card row g-4 align-items-center">
+          <div class="program-detail-info col-12 col-lg-7">
+            <div class="program-meta-pills">
+              <span class="meta-pill">Ages 16 - 19</span>
+              <span class="meta-pill">Grades 11 - 12</span>
+              <span class="meta-pill">Global University Pathway</span>
+            </div>
+            <h3>Cambridge Advanced (AS &amp; A Levels)</h3>
+            <p>
+              Prepares students for admission to premier universities in India (IITs, AIIMS, top private universities) and globally (Ivy League, Russell Group). Includes dedicated career counseling and portfolio building.
+            </p>
+
+            <div class="curriculum-highlights-title">Key Streams &amp; Career Prep:</div>
+            <div class="curriculum-grid row g-2">
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Engineering &amp; Physical Sciences</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Pre-Med &amp; Life Sciences</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Finance, Econ &amp; Business Management</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> University Application Guidance</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> SAT / IELTS Coaching Support</div>
+              <div class="curriculum-item col-12 col-sm-6"><i class="fas fa-check"></i> Leadership &amp; Internship Projects</div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-primary trigger-enquire-modal">Enquire for A-Level Admissions</button>
+            </div>
+          </div>
+
+          <div class="program-img-frame col-12 col-lg-5">
+            <img src="./assets/as-a-levels.jpg" alt="Cambridge AS & A Levels">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     9. CAMPUS & FACILITIES SHOWCASE SECTION
+     ========================================================================== -->
+  <section class="facilities-section" id="facilities">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Campus Life &amp; Amenities</span>
+        <h2 class="section-title">Designed for Holistic &amp; Safe Learning</h2>
+        <p class="section-subtitle">
+          Our Indiranagar campus provides modern, secure facilities where academic excellence meets physical wellness and creative exploration.
+        </p>
+      </div>
+
+      <div class="facilities-grid row g-4">
+        <!-- Facility 1 -->
+        <div class="facility-card reveal col-12 col-md-6 col-lg-4">
+          <div class="facility-img-wrap">
+            <img src="./assets/apple.jpg" alt="Apple Smart Classrooms">
+            <span class="facility-badge">Digital Learning</span>
+          </div>
+          <div class="facility-body">
+            <h4>Apple Smart Classrooms</h4>
+            <p>Equipped with Apple iPads, smart boards, and digital learning suites that turn abstract concepts into tangible interactive experiences.</p>
+          </div>
+        </div>
+
+        <!-- Facility 2 -->
+        <div class="facility-card reveal reveal-delay-1 col-12 col-md-6 col-lg-4">
+          <div class="facility-img-wrap">
+            <img src="./assets/football.jpg" alt="Rooftop Football Turf">
+            <span class="facility-badge">World-Class Sports</span>
+          </div>
+          <div class="facility-body">
+            <h4>Rooftop Football Turf</h4>
+            <p>All-weather synthetic turf for football, athletics, and physical training with professional coaching staff and safety surrounds.</p>
+          </div>
+        </div>
+
+        <!-- Facility 3 -->
+        <div class="facility-card reveal reveal-delay-2 col-12 col-md-6 col-lg-4">
+          <div class="facility-img-wrap">
+            <img src="./assets/pool.jpg" alt="Swimming Pool & Amenities">
+            <span class="facility-badge">Aquatic Center</span>
+          </div>
+          <div class="facility-body">
+            <h4>Temperature-Controlled Pool</h4>
+            <p>Hygienic swimming pool with certified life guards, ensuring year-round water safety and aquatic fitness training for all age groups.</p>
+          </div>
+        </div>
+
+        <!-- Facility 4 -->
+        <div class="facility-card reveal col-12 col-md-6 col-lg-4">
+          <div class="facility-img-wrap">
+            <img src="./assets/Nutrition-nalpad.jpg" alt="Nutritious Dining">
+            <span class="facility-badge">Health &amp; Nutrition</span>
+          </div>
+          <div class="facility-body">
+            <h4>Balanced Nutritious Meals</h4>
+            <p>In-house chef-curated meals designed by pediatric nutritionists to promote healthy physical growth and sustained daily focus.</p>
+          </div>
+        </div>
+
+        <!-- Facility 5 -->
+        <div class="facility-card reveal reveal-delay-1 col-12 col-md-6 col-lg-4">
+          <div class="facility-img-wrap">
+            <img src="./assets/cctv.jpg" alt="CCTV & Safety">
+            <span class="facility-badge">24/7 Protection</span>
+          </div>
+          <div class="facility-body">
+            <h4>CCTV &amp; Campus Security</h4>
+            <p>Round-the-clock security monitoring, biometric access points, and on-campus infirmary with qualified healthcare personnel.</p>
+          </div>
+        </div>
+
+        <!-- Facility 6 -->
+        <div class="facility-card reveal reveal-delay-2 col-12 col-md-6 col-lg-4">
+          <div class="facility-img-wrap">
+            <img src="./assets/college-career.jpg" alt="Individual Mentoring">
+            <span class="facility-badge">Student Well-being</span>
+          </div>
+          <div class="facility-body">
+            <h4>College &amp; Career Counseling</h4>
+            <p>Dedicated mentorship, aptitude evaluations, and university placement support tailored for each student's career aspirations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     10. PARENT TESTIMONIALS & REVIEWS (SOCIAL PROOF)
+     ========================================================================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Parent Testimonials</span>
+        <h2 class="section-title">What Parents Say About Nalapad Academy</h2>
+        <p class="section-subtitle">
+          Hear real experiences from parents whose children thrive in our Cambridge environment.
+        </p>
+      </div>
+
+      <div class="testimonials-grid row g-4">
+        <!-- Review 1 -->
+        <div class="testimonial-card reveal col-12 col-lg-4">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-quote">
+            "Nalapad Academy has transformed my daughter's confidence. The Cambridge curriculum combined with Apple Smart Classrooms makes learning interactive and fun. The 6:1 ratio ensures teacher attention every day!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="author-info">
+              <h5>Verified Parent</h5>
+              <p>Parent of Grade 4 Student</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card reveal reveal-delay-1 col-12 col-lg-4">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-quote">
+            "Finding a true Cambridge school in Domlur/Indiranagar with great sports facilities was essential for us. The rooftop football turf and swimming pool are fantastic. Highly recommended for holistic growth!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="author-info">
+              <h5>Verified Parent</h5>
+              <p>Parent of IGCSE Grade 9 Student</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card reveal reveal-delay-2 col-12 col-lg-4">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-quote">
+            "The Early Years FS2 program is outstanding. The teachers are gentle, patient, and deeply knowledgeable. My son looks forward to school every single morning!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><i class="fas fa-user"></i></div>
+            <div class="author-info">
+              <h5>Verified Parent</h5>
+              <p>Parent of FS2 Early Learner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     11. ADMISSIONS WORKFLOW & FAQ ACCORDION
+     ========================================================================== -->
+  <section class="admissions-section" id="admissions">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Admissions 2026-27</span>
+        <h2 class="section-title">Simple 4-Step Admission Process</h2>
+        <p class="section-subtitle">
+          We keep our enrollment process transparent, quick, and stress-free for parents.
+        </p>
+      </div>
+
+      <div class="process-steps-grid row g-3">
+        <div class="process-step-card reveal-scale col-12 col-md-6 col-lg-3">
+          <div class="step-number">1</div>
+          <h4>Submit Enquiry</h4>
+          <p>Fill out our quick online enquiry form or call +91 91208 88888 for immediate assistance.</p>
+        </div>
+
+        <div class="process-step-card reveal-scale reveal-delay-1 col-12 col-md-6 col-lg-3">
+          <div class="step-number">2</div>
+          <h4>Counseling &amp; Visit</h4>
+          <p>Schedule a personalized campus tour and interaction with our Academic Coordinators.</p>
+        </div>
+
+        <div class="process-step-card reveal-scale reveal-delay-2 col-12 col-md-6 col-lg-3">
+          <div class="step-number">3</div>
+          <h4>Application Submission</h4>
+          <p>Submit required student documents and complete the student assessment interaction.</p>
+        </div>
+
+        <div class="process-step-card reveal-scale reveal-delay-3 col-12 col-md-6 col-lg-3">
+          <div class="step-number">4</div>
+          <h4>Seat Confirmation</h4>
+          <p>Receive official admission confirmation letter and welcome kit to join Nalapad Academy.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="text-center reveal" style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.75rem;">Frequently Asked Questions</h3>
+      </div>
+
+      <div class="faq-container reveal-scale">
+        <div class="faq-item active">
+          <div class="faq-header">
+            <span>What curriculum does Nalapad Academy follow?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-body">
+            Nalapad Academy follows the internationally accredited Cambridge Assessment International Education (CAIE) curriculum from Early Years (EYFS) through Cambridge Primary, Lower Secondary, IGCSE, and AS &amp; A Levels (School Code: IA031).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>What is the student-teacher ratio in classrooms?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-body">
+            We maintain an optimal ratio of 6:1 to 15:1 depending on grade levels, ensuring individual attention, personalized learning plans, and close academic tracking for every child.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Are campus visits allowed during working hours?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-body">
+            Yes! We welcome parents for campus visits Monday through Saturday from 9:00 AM to 4:00 PM. You can pre-book a slot via our "Book Campus Visit" button or by calling +91 91208 88888.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Do you provide school transport facilities?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-body">
+            Yes, we provide GPS-tracked, air-conditioned bus transportation covering major areas across Indiranagar, Domlur, Koramangala, Whitefield, MG Road, and Old Airport Road with dedicated female bus attendants.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     12. LOCATION & CONTACT SECTION
+     ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid row g-4 align-items-center">
+        <div class="contact-info-card reveal-left col-12 col-lg-6">
+          <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--accent-gold);">Contact Us</span>
+          <h3>Get in Touch with Admissions</h3>
+          <p>We are conveniently located in Indiranagar / Domlur, Bengaluru. Reach out to us for fee structure, campus visit scheduling, or prospectus details.</p>
+
+          <ul class="contact-details-list">
+            <li class="contact-detail-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-text">
+                <h5>School Address</h5>
+                <p>Nalapad Academy, No. 103, BWSSB Road, Behind Embassy Golf Links, Domlur / Indiranagar, Bangalore - 560037</p>
+                <a href="https://maps.google.com/?q=Nalapad+Academy+Bangalore" target="_blank" style="color: var(--accent-gold); font-size: 0.85rem; text-decoration: underline;">Open in Google Maps &rarr;</a>
+              </div>
+            </li>
+
+            <li class="contact-detail-item">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="contact-text">
+                <h5>Admissions Phone Lines</h5>
+                <p><a href="tel:+919120888888">+91 91208 88888</a> | <a href="tel:+919610011133">+91 96100 11133</a></p>
+              </div>
+            </li>
+
+            <li class="contact-detail-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-text">
+                <h5>Email Inquiries</h5>
+                <p><a href="mailto:admissions@nalapadacademy.in">admissions@nalapadacademy.in</a></p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="tel:+919120888888" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <a href="https://wa.me/91912088888" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+          </div>
+        </div>
+
+        <div class="map-card-wrapper reveal-right col-12 col-lg-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.354673892796!2d77.643224!3d12.949114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144e595b1285%3A0xb36b539c8eef8334!2sNalapad%20Academy!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Nalapad Academy Map Location"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     14. MODAL POPUPS (BOOK CAMPUS VISIT & THANK YOU CONVERSION MODAL)
+     ========================================================================== -->
+  
+  <!-- Campus Visit Modal -->
+  <div class="modal-overlay" id="campusVisitModal">
+    <div class="modal-box">
+      <button class="modal-close-btn">&times;</button>
+      <div class="form-header">
+        <h3>Book a Campus Visit</h3>
+        <p>Experience Nalapad Academy's campus &amp; smart classrooms</p>
+      </div>
+      <form class="admission-lead-form">
+        <div class="form-group">
+          <label class="form-label">Parent Name *</label>
+          <input type="text" class="form-control" placeholder="Your full name" required>
+        </div>
+        <div class="form-row row g-3">
+          <div class="form-group col-12 col-sm-6">
+            <label class="form-label">Mobile Number *</label>
+            <input type="tel" class="form-control" placeholder="10-digit number" required>
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label class="form-label">Preferred Date *</label>
+            <input type="date" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Grade / Program Seeking *</label>
+          <select class="form-control" required>
+            <option value="">Select Grade</option>
+            <option value="Early Years (EYFS)">Early Years (Nursery / KG)</option>
+            <option value="Primary (1-5)">Cambridge Primary (1-5)</option>
+            <option value="Lower Sec (6-8)">Lower Secondary (6-8)</option>
+            <option value="IGCSE (9-10)">Cambridge IGCSE (9-10)</option>
+            <option value="A Levels (11-12)">AS &amp; A Levels (11-12)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit-btn">
+          <i class="fas fa-calendar-check"></i> Confirm Campus Tour Booking
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Thank You / Ads Conversion Tracking Modal -->
+  <div class="modal-overlay" id="thankYouModal">
+    <div class="modal-box thank-you-box">
+      <button class="modal-close-btn">&times;</button>
+      <div class="thank-you-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h3>Thank You for Enquiring!</h3>
+      <p>
+        Your enquiry has been received successfully. Our admissions counselor will call you within 30 minutes to share the detailed prospectus, fee structure, and answer your questions.
+      </p>
+
+      <div class="thank-you-cta-group">
+        <a href="tel:+919120888888" class="btn btn-primary">
+          <i class="fas fa-phone-alt"></i> Speak to Admissions Now
+        </a>
+        <a href="https://wa.me/91912088888" target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+
+</body>
+</html>

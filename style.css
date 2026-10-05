@@ -1,0 +1,1521 @@
+/* ==========================================================================
+   NALAPAD ACADEMY - STUNNING HIGH-CONVERTING LANDING PAGE STYLESHEET
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand Color Palette */
+  --primary-navy: #0B2545;
+  --primary-navy-dark: #071930;
+  --accent-copper: #AC5443;
+  --accent-copper-hover: #8A4336;
+  --accent-copper-light: #C17F72;
+  --accent-gold: #FFB703;
+  --accent-gold-light: #FFF3CD;
+  --emerald-green: #25D366;
+  --emerald-green-dark: #1EBE57;
+  
+  /* Text & Surfaces */
+  --text-dark: #1A202C;
+  --text-muted: #4A5568;
+  --text-light: #718096;
+  --bg-light: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-dark: #0F172A;
+  --border-color: #E2E8F0;
+  --border-focus: #AC5443;
+
+  /* Shadows & Radius */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 6px 18px rgba(11, 37, 69, 0.08);
+  --shadow-lg: 0 12px 32px rgba(11, 37, 69, 0.12);
+  --shadow-glow: 0 0 25px rgba(172, 84, 67, 0.3);
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+  
+  /* Fonts */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* --- Base & Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--primary-navy);
+  line-height: 1.25;
+  font-weight: 700;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--accent-copper);
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  color: var(--accent-copper-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+}
+
+/* --- Typography Helpers --- */
+.section-tag {
+  display: inline-block;
+  font-size: clamp(0.72rem, 2vw, 0.85rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-copper);
+  background: rgba(172, 84, 67, 0.1);
+  padding: 0.35rem 1.1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  word-wrap: break-word;
+}
+
+.section-subtitle {
+  font-size: clamp(0.95rem, 2.5vw, 1.125rem);
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-active {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+}
+
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+/* --- Buttons & Cool Shimmer Hover --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: center;
+  white-space: normal; /* Allows text wrapping on small screens */
+  word-break: break-word;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+  left: 150%;
+}
+
+.btn:active {
+  transform: scale(0.97) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-copper), var(--accent-copper-hover));
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(172, 84, 67, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-copper-light), var(--accent-copper-hover));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(172, 84, 67, 0.45);
+}
+
+.btn-secondary {
+  background: var(--primary-navy);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(11, 37, 69, 0.25);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-navy-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(11, 37, 69, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--primary-navy);
+  color: var(--primary-navy) !important;
+}
+
+.btn-outline:hover {
+  background: var(--primary-navy);
+  color: #FFFFFF !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(11, 37, 69, 0.2);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, var(--emerald-green), #10B981);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #10B981, #059669);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+}
+
+.btn-pulse {
+  animation: pulse-animation 2.2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% { box-shadow: 0 0 0 0 rgba(172, 84, 67, 0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(172, 84, 67, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(172, 84, 67, 0); }
+}
+
+/* ==========================================================================
+   1. TOP ANNOUNCEMENT & CONTACT BAR
+   ========================================================================== */
+.top-bar {
+  background: var(--primary-navy-dark);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.top-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.top-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #E2E8F0;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.top-contact-item a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.top-contact-item a:hover {
+  color: var(--accent-gold);
+}
+
+.top-announcement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge-pulse {
+  background: var(--accent-copper);
+  color: #FFF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: miniPulse 1.8s infinite alternate;
+}
+
+@keyframes miniPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+/* ==========================================================================
+   2. MAIN HEADER & STICKY NAVIGATION
+   ========================================================================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+  padding: 0;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  transition: padding 0.3s ease;
+  gap: 1rem;
+}
+
+.main-header.scrolled .navbar {
+  padding: 0.45rem 0;
+}
+
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.brand-logo-img {
+  height: 50px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cambridge-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--border-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  flex-shrink: 0;
+}
+
+.cambridge-icon {
+  width: 26px;
+  height: 26px;
+  background: var(--primary-navy);
+  color: var(--accent-gold);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   3. HERO SECTION WITH ABOVE-THE-FOLD LEAD ENQUIRY FORM
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #0B2545 0%, #134074 100%);
+  color: #FFFFFF;
+  padding: 3.5rem 0 4.5rem 0;
+  overflow: hidden;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: url('./assets/bg.avif') center center / cover no-repeat;
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+  transform: scale(1.05);
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  padding-right: 0.5rem;
+  max-width: 100%;
+}
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 183, 3, 0.15);
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  color: var(--accent-gold);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 1.15rem;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  color: #FFFFFF;
+  line-height: 1.18;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.5px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.hero-title span {
+  color: var(--accent-gold);
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  color: #CBD5E1;
+  margin-bottom: 1.5rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.hero-highlights-list {
+  margin-bottom: 1.85rem;
+  list-style: none;
+}
+
+.hero-highlight-item {
+  display: flex;
+  align-items: flex-start; /* Correct alignment for multi-line text */
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #F1F5F9;
+  white-space: normal; /* Allows text wrapping */
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.hero-highlight-item i {
+  color: var(--accent-gold);
+  font-size: 1.05rem;
+  margin-top: 0.2rem; /* Aligns checkmark with top line */
+  flex-shrink: 0;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* --- Hero Lead Enquiry Card --- */
+.hero-form-card {
+  background: #FFFFFF;
+  color: var(--text-dark);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 1.35rem;
+}
+
+.form-header h3 {
+  font-size: 1.45rem;
+  color: var(--primary-navy);
+  margin-bottom: 0.2rem;
+  word-break: break-word;
+}
+
+.form-header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  word-break: break-word;
+}
+
+.form-group {
+  margin-bottom: 0.9rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  margin-bottom: 0.3rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.72rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: #FAFAFA;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-copper);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(172, 84, 67, 0.18);
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+}
+
+.form-privacy-note {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 0.65rem;
+}
+
+.form-privacy-note i {
+  color: var(--emerald-green);
+}
+
+/* ==========================================================================
+   4. QUICK STATS STRIP
+   ========================================================================== */
+.stats-strip {
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-md);
+  margin-top: -2.25rem;
+  position: relative;
+  z-index: 10;
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.5rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.stats-grid {
+  text-align: center;
+}
+
+.stat-item {
+  border-right: 1px solid var(--border-color);
+  padding: 0 0.4rem;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: var(--accent-copper);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   5. FLOATING QUICK-CONTACT BUTTONS
+   ========================================================================== */
+.floating-actions-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.float-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF !important;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  border: none;
+}
+
+.float-btn:hover {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.float-btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); }
+.float-btn-call { background: linear-gradient(135deg, var(--primary-navy), #1E3A8A); }
+.float-btn-enquire { background: linear-gradient(135deg, var(--accent-copper), var(--accent-copper-hover)); }
+
+.float-btn-tooltip {
+  position: absolute;
+  right: 66px;
+  background: var(--primary-navy-dark);
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.float-btn:hover .float-btn-tooltip {
+  opacity: 1;
+}
+
+/* Mobile Sticky Bottom CTA Bar */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  z-index: 998;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  padding: 0.6rem 0.85rem;
+}
+
+.mobile-bottom-bar .btn {
+  padding: 0.6rem 0.3rem;
+  font-size: 0.82rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   6. SECTION: ABOUT NALAPAD ACADEMY
+   ========================================================================== */
+.about-section {
+  padding: 4.5rem 0;
+}
+
+.about-image-stack {
+  position: relative;
+}
+
+.about-main-img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  object-fit: cover;
+}
+
+.about-badge-card {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  background: #FFFFFF;
+  padding: 1.1rem 1.35rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border-left: 5px solid var(--accent-copper);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.about-badge-card i {
+  font-size: 2rem;
+  color: var(--accent-copper);
+}
+
+.about-badge-text h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.1rem;
+}
+
+.about-badge-text p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.feature-cards-grid {
+  margin-top: 1.75rem;
+}
+
+.feature-card {
+  background: var(--bg-surface);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-copper);
+}
+
+.feature-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(172, 84, 67, 0.1);
+  color: var(--accent-copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.feature-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   7. DEDICATED EARLY YEARS PROGRAM SECTION
+   ========================================================================== */
+.early-years-section {
+  padding: 4.5rem 0;
+  background: #FFFDF9;
+  border-top: 1px solid #F6E5D7;
+  border-bottom: 1px solid #F6E5D7;
+}
+
+.ey-stage-grid {
+  margin-top: 2.25rem;
+}
+
+.ey-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.25rem;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.ey-card:hover {
+  border-color: var(--accent-copper);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+}
+
+.ey-stage-tag {
+  background: var(--accent-copper);
+  color: #FFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+  margin-bottom: 0.85rem;
+}
+
+.ey-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.ey-age-group {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-copper);
+  margin-bottom: 0.85rem;
+}
+
+.ey-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.15rem;
+  flex-grow: 1;
+}
+
+.ey-list {
+  list-style: none;
+  font-size: 0.8rem;
+  color: var(--text-dark);
+  margin-bottom: 1.35rem;
+}
+
+.ey-list li {
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ey-list li i {
+  color: var(--emerald-green);
+}
+
+/* ==========================================================================
+   8. DEDICATED CAMBRIDGE PATHWAY
+   ========================================================================== */
+.cambridge-section {
+  padding: 4.5rem 0;
+  background: var(--bg-surface);
+}
+
+.pathway-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: var(--bg-light);
+  border: 1.5px solid var(--border-color);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-navy);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+  background: rgba(172, 84, 67, 0.08);
+  border-color: var(--accent-copper);
+}
+
+.tab-btn.active {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border-color: var(--primary-navy);
+  box-shadow: var(--shadow-md);
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.4s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.program-detail-card {
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  border: 1px solid var(--border-color);
+}
+
+.program-meta-pills {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.meta-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: #E2E8F0;
+  color: var(--primary-navy);
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.program-detail-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.85rem;
+}
+
+.program-detail-card p {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.curriculum-highlights-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.curriculum-grid {
+  margin-bottom: 1.5rem;
+}
+
+.curriculum-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.curriculum-item i {
+  color: var(--accent-copper);
+}
+
+.program-img-frame {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.program-img-frame img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   9. CAMPUS & FACILITIES SHOWCASE GRID
+   ========================================================================== */
+.facilities-section {
+  padding: 4.5rem 0;
+  background: var(--bg-light);
+}
+
+.facilities-grid {
+  margin-top: 2.25rem;
+}
+
+.facility-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-copper);
+}
+
+.facility-img-wrap {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.facility-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.facility-card:hover .facility-img-wrap img {
+  transform: scale(1.06);
+}
+
+.facility-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(11, 37, 69, 0.88);
+  color: #FFF;
+  backdrop-filter: blur(4px);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.facility-body { padding: 1.35rem; }
+.facility-body h4 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+.facility-body p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+/* ==========================================================================
+   10. PARENT TESTIMONIALS & REVIEWS
+   ========================================================================== */
+.testimonials-section {
+  padding: 4.5rem 0;
+  background: var(--bg-surface);
+}
+
+.testimonials-grid {
+  margin-top: 2.25rem;
+}
+
+.testimonial-card {
+  background: var(--bg-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-rating {
+  color: #FFC107;
+  font-size: 0.95rem;
+  margin-bottom: 0.85rem;
+}
+
+.testimonial-quote {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.85rem;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--primary-navy);
+  color: #FFF;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.author-info h5 { font-size: 0.9rem; margin-bottom: 0.1rem; }
+.author-info p { font-size: 0.75rem; color: var(--accent-copper); font-weight: 600; }
+
+/* ==========================================================================
+   11. ADMISSIONS PROCESS & FAQ ACCORDION
+   ========================================================================== */
+.admissions-section {
+  padding: 4.5rem 0;
+  background: var(--bg-light);
+}
+
+.process-steps-grid {
+  margin-top: 2.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.process-step-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.1rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.step-number {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-copper);
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.85rem auto;
+}
+
+.process-step-card h4 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+.process-step-card p { font-size: 0.82rem; color: var(--text-muted); }
+
+/* FAQ Accordion */
+.faq-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+}
+
+.faq-header {
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  user-select: none;
+}
+
+.faq-header i { transition: transform 0.3s ease; color: var(--accent-copper); }
+.faq-item.active { border-color: var(--accent-copper); }
+.faq-item.active .faq-header i { transform: rotate(180deg); }
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out, padding 0.35s ease;
+  padding: 0 1.35rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.faq-item.active .faq-body {
+  max-height: 300px;
+  padding: 0 1.35rem 1.15rem 1.35rem;
+}
+
+/* ==========================================================================
+   12. LOCATION & CONTACT SECTION
+   ========================================================================== */
+.contact-section {
+  padding: 4.5rem 0;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+}
+
+.contact-info-card h3 {
+  color: #FFFFFF;
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  margin-bottom: 0.85rem;
+}
+
+.contact-info-card p {
+  color: #CBD5E1;
+  margin-bottom: 1.75rem;
+}
+
+.contact-details-list { list-style: none; margin-bottom: 1.75rem; }
+
+.contact-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: rgba(172, 84, 67, 0.2);
+  color: var(--accent-copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.contact-text h5 { color: #FFFFFF; font-size: 0.9rem; margin-bottom: 0.1rem; }
+.contact-text a, .contact-text p { color: #E2E8F0; font-size: 0.85rem; }
+
+.map-card-wrapper {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  height: 380px;
+}
+
+.map-card-wrapper iframe { width: 100%; height: 100%; border: 0; }
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
+.site-footer {
+  background: var(--primary-navy-dark);
+  color: #94A3B8;
+  font-size: 0.85rem;
+  padding: 3rem 0 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   14. MODAL POPUPS
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(7, 25, 48, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+.modal-box {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  max-width: 520px;
+  width: 100%;
+  padding: 2.25rem 1.75rem;
+  position: relative;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.35s ease;
+  box-sizing: border-box;
+}
+
+.modal-overlay.active .modal-box { transform: translateY(0) scale(1); }
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--bg-light);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-you-box { text-align: center; }
+.thank-you-icon {
+  width: 65px;
+  height: 65px;
+  background: rgba(37, 211, 102, 0.15);
+  color: var(--emerald-green);
+  font-size: 2.5rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.15rem auto;
+}
+
+.thank-you-box h3 { font-size: 1.65rem; color: var(--primary-navy); margin-bottom: 0.4rem; }
+.thank-you-box p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.thank-you-cta-group {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   15. RESPONSIVE BREAKPOINTS - ABSOLUTE NO TEXT CLIPPING ON ANY SCREEN
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-content { padding-right: 0; text-align: center; }
+  .hero-highlights-list { text-align: left; }
+  .hero-actions { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  /* Top Bar Mobile */
+  .top-bar { font-size: 0.75rem; padding: 0.35rem 0; }
+  .top-bar-inner { flex-direction: column; align-items: center; gap: 0.25rem; }
+  .top-contact-info { justify-content: center; gap: 0.75rem; width: 100%; }
+  .top-contact-item { font-size: 0.75rem; word-break: break-word; }
+  .top-announcement { display: none; }
+
+  /* Navbar Mobile */
+  .navbar { padding: 0.5rem 0; gap: 0.5rem; }
+  .brand-logo-wrap { gap: 0.5rem; }
+  .brand-logo-img { height: 38px; }
+  .brand-name { font-size: 1rem; }
+  .cambridge-badge { display: none; }
+  #headerEnquireBtn { display: none; }
+
+  /* Hero Section Mobile Fixes for Text Sizing & Buttons */
+  .hero-section { padding: 2rem 0 3rem 0; }
+  .hero-badge-pill {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+  .hero-title {
+    font-size: clamp(1.65rem, 6vw, 2.1rem);
+    line-height: 1.2;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .hero-description {
+    font-size: 0.92rem;
+    word-break: break-word;
+  }
+  
+  /* Critical Hero Highlights Wrap Fix */
+  .hero-highlight-item {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Hero Action Buttons Mobile Fix */
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+  
+  /* Hero Form Card Mobile Padding & Title Fix */
+  .hero-form-card {
+    padding: 1.35rem 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+  .form-header h3 {
+    font-size: 1.25rem;
+    word-break: break-word;
+  }
+  .form-header p {
+    font-size: 0.8rem;
+    word-break: break-word;
+  }
+  /* Stats Strip Mobile */
+  .stats-strip { margin-top: -1.5rem; padding: 1.25rem 0.75rem; }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(4) { border-right: none; }
+  .stat-item:nth-child(5) { border-right: none; }
+
+  /* Floating Contact Buttons Mobile */
+  .floating-actions-container {
+    bottom: 75px;
+    right: 14px;
+    gap: 8px;
+  }
+  .float-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+  .float-btn-tooltip { display: none; }
+
+  /* Mobile Sticky Bottom CTA Bar */
+  .mobile-bottom-bar { display: flex; }
+}
+
+@media (max-width: 400px) {
+  .brand-name { font-size: 0.95rem; }
+  .hero-title { font-size: 1.55rem; }
+  .section-title { font-size: 1.45rem; }
+  .stats-strip { padding: 1rem 0.5rem; }
+  .stat-number { font-size: 1.5rem; }
+  .hero-form-card { padding: 1.15rem 0.85rem; }
+}
+
+/* ==========================================================================
+   16. LEGAL PAGES (PRIVACY POLICY / TERMS OF SERVICE)
+   ========================================================================== */
+.legal-section {
+  padding: 3.5rem 0 4.5rem 0;
+}
+
+.legal-content {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.legal-content h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-content p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.legal-content a {
+  text-decoration: underline;
+}
+
+.legal-updated {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: 2rem;
+}
